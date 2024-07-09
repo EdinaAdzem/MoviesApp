@@ -32,21 +32,25 @@ class StorageJson(IStorage):
 
     def delete_movie(self, title):
         movies = self.list_movies()
-        if title in movies:
-            del movies[title]
+        lowercase_titles = {key.lower(): key for key in movies.keys()}
+
+        if title.lower() in lowercase_titles:
+            original_title = lowercase_titles[title.lower()]  # Get the original case title
+            del movies[original_title]
             self._save_movies(movies)
-            print(f"Movie '{title}' has been deleted.")
+            print(f"Movie '{original_title}' has been deleted.")
             return True
         else:
             print(f"Movie '{title}' is not in the database.")
             return False
 
-    def update_movie(self, title, rating):
+    def update_movie(self, title, new_rating):
         movies = self.list_movies()
-        if title in movies:
-            movies[title]["rating"] = rating
-            self._save_movies(movies)
-            print(f"Movie '{title}' rating updated to {rating}")
+        title_lower = title.lower()  # Convert title to lowercase for case insensitivity
+        if title_lower in movies:
+            movies[title_lower]["rating"] = new_rating
+            self._save_movies(movies)  # Save the updated movies dictionary
+            print(f"Movie '{title}' rating updated to {new_rating}")
             return True
         else:
             print(f"The movie '{title}' is not in the database.")

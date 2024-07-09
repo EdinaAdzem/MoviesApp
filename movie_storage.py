@@ -2,6 +2,7 @@ import json
 import requests
 from storage_json import StorageJson
 
+
 # Constants to remain while there is the use of API https://www.omdbapi.com/
 URL_API = "http://www.omdbapi.com/"
 API_KEY = "c3bb5c1c"
@@ -57,21 +58,21 @@ def delete_movie(title):
     """
     Deletes a movie from the movies database.
     """
-    if storage.delete_movie(title):
-        print(f"Movie '{title}' has been deleted.")
-    else:
-        print(f"Movie '{title}' is not in the database.")
+    storage.delete_movie(title)
 
 
 def update_movie(movie_title, new_rating):
     """
     Updates the rating of a movie in the movies database using the storage class.
     """
-    if storage.update_movie(movie_title, new_rating):
+    movies = storage.list_movies()
+    movie_title_lower = movie_title.lower()  # Convert input title to lowercase
+
+    if movie_title_lower in movies:
+        storage.update_movie(movie_title_lower, new_rating)  # Use lowercase title for update
         print(f"Movie '{movie_title}' rating updated to {new_rating}")
     else:
         print(f"The movie '{movie_title}' is not in the database.")
-
 
 def list_movies():
     """
