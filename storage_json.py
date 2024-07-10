@@ -5,7 +5,7 @@ import requests
 # Constants to remain while there is the use of API https://www.omdbapi.com/
 URL_API = "http://www.omdbapi.com/"
 API_KEY = "c3bb5c1c"
-JSON_FILE = 'data.json'
+JSON_FILE = 'movies.json'
 
 
 class StorageJson(IStorage):

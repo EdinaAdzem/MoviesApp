@@ -60,7 +60,7 @@ class MovieApp:
         self._storage.update_movie(title, new_rating)
 
     def _command_movie_stats(self):
-        """performs opeartions to find and display stats"""
+        """performs operations to find and display stats"""
         movies = self._storage.list_movies()
         total_movies = len(movies)
         print(f"Total movies: {total_movies}")
@@ -165,13 +165,14 @@ class MovieApp:
         print(f"Generated {OUTPUT_PATH} successfully!")
 
     def run(self):
-        """The Run logic of the program, calling upon all related functions to perform certain actions listed on the menu"""
+        """The Run logic of the program, calling upon all related functions to perform certain actions listed on the
+        menu"""
         while True:
             print(MENU)
             try:
                 user_choice = int(input("Enter your choice (0-9): "))
                 menu_options = {
-                    0: self._command_exit_program,
+                    0: _command_exit_program,
                     1: self._command_list_movies,
                     2: self._command_add_movie,
                     3: self._command_delete_movie,
@@ -189,7 +190,10 @@ class MovieApp:
             except ValueError:
                 print("Please enter a valid number (between 0 - 9)")
 
-    def _command_exit_program(self):
-        """EXIT function"""
-        print("Bye!")
-        quit()
+
+
+def _command_exit_program():
+    """EXIT function"""
+    print("Bye!")
+    quit()
+

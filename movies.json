@@ -5,12 +5,6 @@
         "rating": "9",
         "poster": "https://m.media-amazon.com/images/M/MV5BNTBkMjg2MjYtYTZjOS00ODQ0LTg0MDEtM2FiNmJmOGU1NGEwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
     },
-    "Test": {
-        "Title": "Test",
-        "year": "2013",
-        "rating": "7",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMTQwMDU5NDkxNF5BMl5BanBnXkFtZTcwMjk5OTk4OQ@@._V1_SX300.jpg"
-    },
     "Rambo": {
         "Title": "Rambo",
         "year": "2008",
@@ -28,5 +22,11 @@
         "year": "2015",
         "rating": "6.4",
         "poster": "https://m.media-amazon.com/images/M/MV5BMTUwNjcxNzAwOF5BMl5BanBnXkFtZTgwNzEzMzIzNDE@._V1_SX300.jpg"
+    },
+    "Cujo": {
+        "Title": "Cujo",
+        "year": "1983",
+        "rating": "7",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjAxMzIzN2YtMDVlYy00Yzc3LThjOTEtNDlhNjkxMjkwYzYyXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg"
     }
 }
