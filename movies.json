@@ -22,5 +22,11 @@
         "year": "2023",
         "rating": "5.4",
         "poster": "https://m.media-amazon.com/images/M/MV5BN2JjODFlYjktMmYwYy00ZDdmLWIwMWEtYWE3MzViZGMyZTJiXkEyXkFqcGdeQXVyMjExMTEzODU@._V1_SX300.jpg"
+    },
+    "Minions": {
+        "Title": "Minions",
+        "year": "2015",
+        "rating": "6.4",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTUwNjcxNzAwOF5BMl5BanBnXkFtZTgwNzEzMzIzNDE@._V1_SX300.jpg"
     }
 }
