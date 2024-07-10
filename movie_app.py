@@ -1,5 +1,4 @@
 import os
-import storage_json
 import statistics
 import random
 
@@ -21,6 +20,7 @@ Menu:
 
 
 class MovieApp:
+    """Movie app class contains teh operations functions"""
     def __init__(self, storage):
         self._storage = storage  # instanciate
 
@@ -41,6 +41,7 @@ class MovieApp:
             print("-" * 40)
 
     def _command_add_movie(self):
+        """adds new movies"""
         title = input("Enter movie title: ")
         year = input("Enter movie year: ")
         rating = input("Enter movie rating: ")
@@ -48,15 +49,18 @@ class MovieApp:
         self._storage.add_movie(title, year, rating, poster)
 
     def _command_delete_movie(self):
+        """deletes a specific movie"""
         title = input("Enter the movie title to delete: ")
         self._storage.delete_movie(title)
 
     def _command_update_movie(self):
+        """updates the movie rating only"""
         title = input("Enter the movie title to update: ")
         new_rating = input("Enter new rating: ")
         self._storage.update_movie(title, new_rating)
 
     def _command_movie_stats(self):
+        """performs opeartions to find and display stats"""
         movies = self._storage.list_movies()
         total_movies = len(movies)
         print(f"Total movies: {total_movies}")
@@ -146,7 +150,7 @@ class MovieApp:
             movie_grid += f'<h3>{movie}</h3>'
             movie_grid += f'<p>Rating: {details["rating"]}</p>'
             movie_grid += f'<p>{details["year"]}</p>'
-            if "poster" in details:  # if to check if the poster exists
+            if "poster" in details:  # check for the poster
                 movie_grid += f'<p><img src="{details["poster"]}" alt="{movie}"></p>'
             else:
                 movie_grid += '<p>Poster not available</p>'

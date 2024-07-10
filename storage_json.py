@@ -7,6 +7,7 @@ URL_API = "http://www.omdbapi.com/"
 API_KEY = "c3bb5c1c"
 JSON_FILE = 'data.json'
 
+
 class StorageJson(IStorage):
     def __init__(self, file_path):
         self.file_path = file_path
@@ -22,10 +23,8 @@ class StorageJson(IStorage):
         with open(self.file_path, 'w') as file:
             json.dump(data, file, indent=4)
 
-
     def list_movies(self):
         return self._read_storage()
-
 
     def add_movie(self, title, year, rating, poster):
         """
@@ -78,13 +77,12 @@ class StorageJson(IStorage):
             print(f"Movie '{title}' is not in the database.")
             return False
 
-
     def update_movie(self, title, new_rating):
         movies = self.list_movies()
         lowercase_titles = {key.lower(): key for key in movies.keys()}
 
         if title.lower() in lowercase_titles:
-            original_title = lowercase_titles[title.lower()]  # Get the original case title
+            original_title = lowercase_titles[title.lower()]
             movies[original_title]["rating"] = new_rating
             self._save_movies(movies)  # Save the updated movies dictionary
             print(f"Movie '{original_title}' rating updated to {new_rating}")
